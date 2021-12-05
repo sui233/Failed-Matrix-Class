@@ -3,7 +3,7 @@ class Fra:              #Fra is the shortage for Fraction
         self.num = top
         self.den = bottom
         if bottom<=0:
-            print("给爷爬")
+            print("Error")
 
     def __str__(self):
         return str(self.num)+"/"+str(self.den)
@@ -64,7 +64,7 @@ class Vec:
             self.detail = lis
             self.dimension = len(lis)
         else:
-            print("戳啦,极霸矛(指列表)嘛")
+            print("A list obj is needed.")
 
     def __str__(self):
         return str(self.detail)
@@ -72,10 +72,10 @@ class Vec:
     def show(self):
         print("{},事{}维向量".format(self.detail, self.dimension))
 
-    def __mul__(self,other):           #内积数乘不分的屑程序,,,
+    def __mul__(self,other):           #内积数乘采用同一个方法
         newdet = []
         ipro = 0
-        if type(other)==int:            #你麻麻的只能把数放在后边[流汗黄豆]
+        if type(other)==int:            #只能把数放在后边
             for i in self.detail:
                 newdet.append(other*i)
             return Vec(newdet)
@@ -99,7 +99,7 @@ class Vec:
                 addet.append(self.detail[i]+other.detail[i])
             return Vec(addet)
         else:
-            print("爪巴")
+            print("Error")
 
     def __truediv__(self,other):
         divdet = []
@@ -114,7 +114,7 @@ class Vec:
             outl.append(vec1.detail[2]*vec2.detail[0]-vec1.detail[0]*vec2.detail[2])
             outl.append(vec1.detail[0]*vec2.detail[1]-vec1.detail[1]*vec2.detail[0])
         else:
-            print("爪巴")
+            print("Error")
         return Vec(outl)
 
 class Mat:
@@ -135,7 +135,7 @@ class Mat:
                 nMats.append(nVec)
             return Mat(nMats)
         else:
-            print("爪巴")
+            print("Error")
             return None
 
     def nVofMat(self, n):
@@ -166,7 +166,7 @@ class Mat:
             else:
                 print("MarkErrorMatMul")
         else:
-            print("[流汗黄豆]")
+            print("Error")
 
     '''def __str__(self):
         for i in self.detail:
